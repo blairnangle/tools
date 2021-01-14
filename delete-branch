@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo -e "Deletes a branch both locally and remotely or prunes local reference if it has already been deleted from remote\n"
+
+echo -e "Assumes \"origin\" as remote alias\n"
+
+git push -d origin "${1}"
+git branch -d "${1}"
+git branch -r --delete origin/"${1}"
